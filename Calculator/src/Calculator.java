@@ -7,8 +7,8 @@ public class Calculator
 		// TODO Auto-generated method stub
 		if(number == "")
 			return 0;
-		
-		return 1;
+		int result = Integer.parseInt(number);
+		return result;
 	}
 	
 
