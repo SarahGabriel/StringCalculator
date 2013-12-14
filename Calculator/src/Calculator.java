@@ -2,7 +2,7 @@
 public class Calculator
 {
 
-	public int Add(String number) 
+	public int calculate(String number) 
 	{
 		// TODO Auto-generated method stub
 		if(number == "")
