@@ -20,4 +20,11 @@ public class TestCalculator
 		int result = calculator.Add("1");
 		assertEquals(1, result);
 	}
+	
+	@Test
+	public void twoNumbers()
+	{
+		int result = calculator.Add("1,2");
+		assertEquals(3, result);
+	}
 }
