@@ -64,4 +64,19 @@ public class TestCalculator
 		}
 
 	}
+	@Test
+	public void negativeNumberwithDelimiterWillThrowAnException() 
+	{
+		int result;
+		try
+		{
+			result = calculator.Add("//;\n-1;-4;2");
+			assertEquals(1, result);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+
+	}
 }
