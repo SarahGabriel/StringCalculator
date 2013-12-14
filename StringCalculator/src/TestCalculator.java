@@ -14,5 +14,10 @@ public class TestCalculator
 		assertEquals(0, result);
 	}
 	
-	
+	@Test
+	public void oneNumber()
+	{
+		int result = calculator.Add("1");
+		assertEquals(1, result);
+	}
 }
