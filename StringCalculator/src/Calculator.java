@@ -9,18 +9,21 @@ public class Calculator
 		{
 			return 0;
 		}
-		else if(numbers.length > 1)
-		{
-			return stringToInt(numbers[0]) + stringToInt(numbers[1]);
-		}
-		else
-		{
-			return Integer.parseInt(numbers[0]);
-		}
+		else return sumNumbers(numbers);
 	}
 
 	private int stringToInt(String input)
 	{
 		return Integer.parseInt(input);
+	}
+	
+	private int sumNumbers(String[] numbers)
+	{
+		int number = 0;
+		for(int i=0; i<numbers.length; i++)
+		{
+			number += stringToInt(numbers[i]);
+		}
+		return number;
 	}
 }
