@@ -8,42 +8,42 @@ public class TestCalculator
 	Calculator calculator = new Calculator();
 
 	@Test
-	public void emptyString()
+	public void emptyString() throws Exception 
 	{
 		int result = calculator.Add("");
 		assertEquals(0, result);
 	}
 
 	@Test
-	public void oneNumber()
+	public void oneNumber() throws Exception
 	{
 		int result = calculator.Add("1");
 		assertEquals(1, result);
 	}
 
 	@Test
-	public void twoNumbers()
+	public void twoNumbers() throws Exception
 	{
 		int result = calculator.Add("1,2");
 		assertEquals(3, result);
 	}
 
 	@Test
-	public void moreNumbers()
+	public void moreNumbers() throws Exception
 	{
 		int result = calculator.Add("1,2,3,4,5");
 		assertEquals(15, result);
 	}
 
 	@Test
-	public void linesBetweenNumbers()
+	public void linesBetweenNumbers() throws Exception
 	{
 		int result = calculator.Add("1\n2,3");
 		assertEquals(6, result);
 	}
 
 	@Test
-	public void delimiter()
+	public void delimiter() throws Exception
 	{
 		int result = calculator.Add("//;\n1;2");
 		assertEquals(3, result);

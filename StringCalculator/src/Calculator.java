@@ -3,9 +3,10 @@ public class Calculator
 {
 	private String delimiter = ",|\n";
 
-	int Add(String number)
+	int Add(String number) throws Exception
 	{
 		String[] numbers = number.split(delimiter);
+		String negativeNumbers ="";
 		int result =0;
 		if(number.isEmpty())
 		{
@@ -18,14 +19,34 @@ public class Calculator
 				delimiter+="|";
 				delimiter+= number.charAt(2);
 				numbers = number.split(delimiter);
+
 				for(int i=2; i<numbers.length; i++)
 				{
-					result +=Integer.parseInt(numbers[i]);
+					if(stringToInt(numbers[i]) > 0)
+					{
+						result +=stringToInt(numbers[i]);
+					}					
 				}
-				return result;
+				negativeNumbers = stringOfNegativeNumber(2, numbers);
 			}
-			else return sumNumbers(numbers);
+			else
+			{
+				negativeNumbers = stringOfNegativeNumber(0, numbers);
+
+				result =  sumNumbers(numbers);
+			}
+
+			if(negativeNumbers.isEmpty() == false)
+			{
+				throw new Exception("negatives not allowed " + negativeNumbers);
+
+			}
+			else
+				return result;
+
 		}
+
+
 	}
 
 	private int stringToInt(String input)
@@ -41,5 +62,17 @@ public class Calculator
 			number += stringToInt(numbers[i]);
 		}
 		return number;
+	}
+	private String stringOfNegativeNumber(int j, String numbers[])
+	{
+		String negativeNumbers = "";
+		for(int i=j; i<numbers.length; i++)
+		{
+			if(stringToInt(numbers[i]) < 0)
+			{
+				negativeNumbers += numbers[i] + " ";
+			}
+		}
+		return negativeNumbers;
 	}
 }
