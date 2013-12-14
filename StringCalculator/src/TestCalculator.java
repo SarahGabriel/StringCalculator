@@ -41,4 +41,11 @@ public class TestCalculator
 		int result = calculator.Add("1\n2,3");
 		assertEquals(6, result);
 	}
+	
+	@Test
+	public void delimiter()
+	{
+		int result = calculator.Add("//;\n1;2");
+		assertEquals(3, result);
+	}
 }
