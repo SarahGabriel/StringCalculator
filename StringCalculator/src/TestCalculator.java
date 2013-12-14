@@ -12,7 +12,7 @@ public class TestCalculator
 	{
 		int result = calculator.Add("");
 		assertEquals(0, result);
-		
 	}
-
+	
+	
 }
